@@ -14,6 +14,7 @@
 		4FCE60461C63AD4D00F95C87 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCE60451C63AD4D00F95C87 /* APIClient.swift */; };
 		4FCE60481C63BEE600F95C87 /* CatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCE60471C63BEE600F95C87 /* CatsViewController.swift */; };
 		4FCE604A1C63C70000F95C87 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCE60491C63C70000F95C87 /* MapKit.framework */; };
+		4FCE604C1C63CDB500F95C87 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCE604B1C63CDB500F95C87 /* Photo.swift */; };
 		9D886935DDE97DDF2F67F6E0 /* Pods_ShowKits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8530F4EAA1ACB4285D168987 /* Pods_ShowKits.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		4FCE60451C63AD4D00F95C87 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4FCE60471C63BEE600F95C87 /* CatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatsViewController.swift; sourceTree = "<group>"; };
 		4FCE60491C63C70000F95C87 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4FCE604B1C63CDB500F95C87 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8530F4EAA1ACB4285D168987 /* Pods_ShowKits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShowKits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC032E0DA7FDE40291598CF /* Pods-ShowKits.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowKits.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShowKits/Pods-ShowKits.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				4FCE603C1C63AD1D00F95C87 /* LaunchScreen.storyboard */,
 				4FCE603A1C63AD1D00F95C87 /* Assets.xcassets */,
 				4FCE60471C63BEE600F95C87 /* CatsViewController.swift */,
+				4FCE604B1C63CDB500F95C87 /* Photo.swift */,
 				4FCE603F1C63AD1D00F95C87 /* Info.plist */,
 			);
 			path = ShowKits;
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCE604C1C63CDB500F95C87 /* Photo.swift in Sources */,
 				4FCE60481C63BEE600F95C87 /* CatsViewController.swift in Sources */,
 				4FCE60341C63AD1D00F95C87 /* AppDelegate.swift in Sources */,
 				4FCE60461C63AD4D00F95C87 /* APIClient.swift in Sources */,

@@ -35,7 +35,7 @@ class APIClient: NSObject {
                longitude:Double,
                 latitude:Double,
                  radius:Double,
-              completion:(success:[AnyObject],failure:NSError)->Void
+              completion:(success:[Photo]?,failure:NSError?)->Void
         ){
             var params = [String:AnyObject]()
             
@@ -60,10 +60,43 @@ class APIClient: NSObject {
                 encoding: .URL,
                 headers: nil)
             .responseJSON { response -> Void in
-                print(response)
+                
+                if response.result.error != nil {
+                    completion(success: nil, failure: response.result.error!)
+                    return
+                }
+                
+                
+                let results = self.parsePhotosFrom(response.result.value as! [String:AnyObject])
+                
+                completion(success: results, failure: nil)
             }
     }
+    
+    func parsePhotosFrom(info:[String:AnyObject])->[Photo] {
+        
+        //photos
+        //photo
+        guard let photos = info["photos"] as? [String : AnyObject],
+               let photo = photos["photo"] as? [ [String : AnyObject] ]
+            else {
+                return [Photo]()
+        }
+        
+        var parsedPhotos = [Photo]()
+        
+        for info in photo {
+            parsedPhotos.append(Photo(info: info))
+        }
+        
+        return parsedPhotos
+    }
 }
+
+
+
+
+
 
 
 

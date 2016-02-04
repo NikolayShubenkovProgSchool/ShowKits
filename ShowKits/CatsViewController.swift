@@ -18,7 +18,6 @@ class CatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
     }
     
@@ -37,6 +36,7 @@ class CatsViewController: UIViewController {
             latitude: mapView.centerCoordinate.latitude,
             radius: radius) { (success, failure) -> Void in
                 
+                print(success)
         }
     }
     

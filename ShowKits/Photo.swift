@@ -9,10 +9,13 @@
 import UIKit
 import MapKit
 
-class Photo: NSObject {
+class Photo: NSObject, MKAnnotation  {
     var name:String?
     var coordinate:CLLocationCoordinate2D
     var photoURL:String = ""
+    var title: String? {
+        return name
+    }
     
     init(info:[String:AnyObject]){
         if let parsedName = info["title"] as? String {

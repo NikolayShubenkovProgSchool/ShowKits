@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 /*
 parameters[@"tags"] = @"cats";
@@ -27,5 +28,44 @@ parameters[@"api_key"] = @"2b2c9f8abc28afe8d7749aee246d951c";
 */
 
 class APIClient: NSObject {
-
+    
+    static let apiURL = "https://api.flickr.com/services/rest/"
+    
+    func find(searchName:String,
+               longitude:Double,
+                latitude:Double,
+                 radius:Double,
+              completion:(success:[AnyObject],failure:NSError)->Void
+        ){
+            var params = [String:AnyObject]()
+            
+            params["tags"] = searchName
+            params["bbox"] = "bbox"
+            params["lat"]  = latitude
+            params["lon"]  = longitude
+            params["radius"] = radius
+            params["extras"] = "url_l,geo,date_taken,owner_name"
+            
+            params["format"] = "json"
+            params["content_type"]   = 1
+            params["nojsoncallback"] = 1
+            
+            params["method"] = "flickr.photos.search"
+            params["api_key"] = "2b2c9f8abc28afe8d7749aee246d951c"
+            
+            
+            Alamofire.request(.GET,
+                APIClient.apiURL,
+                parameters: params,
+                encoding: .URL,
+                headers: nil)
+            .responseJSON { response -> Void in
+                print(response)
+            }
+    }
 }
+
+
+
+
+

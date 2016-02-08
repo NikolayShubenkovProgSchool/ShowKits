@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2A56F31C69085A00EC4132 /* PhotoDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2A56F21C69085A00EC4132 /* PhotoDetailedViewController.swift */; };
 		4FCE60341C63AD1D00F95C87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCE60331C63AD1D00F95C87 /* AppDelegate.swift */; };
 		4FCE60391C63AD1D00F95C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCE60371C63AD1D00F95C87 /* Main.storyboard */; };
 		4FCE603B1C63AD1D00F95C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCE603A1C63AD1D00F95C87 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		3F70AE353320B0BA90BE31DD /* Pods-ShowKits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowKits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShowKits/Pods-ShowKits.debug.xcconfig"; sourceTree = "<group>"; };
+		4F2A56F21C69085A00EC4132 /* PhotoDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailedViewController.swift; sourceTree = "<group>"; };
 		4FCE60301C63AD1D00F95C87 /* ShowKits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowKits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCE60331C63AD1D00F95C87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FCE60381C63AD1D00F95C87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		4FCE60321C63AD1D00F95C87 /* ShowKits */ = {
 			isa = PBXGroup;
 			children = (
+				4F2A56F21C69085A00EC4132 /* PhotoDetailedViewController.swift */,
 				4FCE60451C63AD4D00F95C87 /* APIClient.swift */,
 				4FCE60331C63AD1D00F95C87 /* AppDelegate.swift */,
 				4FCE60371C63AD1D00F95C87 /* Main.storyboard */,
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2A56F31C69085A00EC4132 /* PhotoDetailedViewController.swift in Sources */,
 				4FCE604C1C63CDB500F95C87 /* Photo.swift in Sources */,
 				4FCE60481C63BEE600F95C87 /* CatsViewController.swift in Sources */,
 				4FCE60341C63AD1D00F95C87 /* AppDelegate.swift in Sources */,

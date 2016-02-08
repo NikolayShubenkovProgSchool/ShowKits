@@ -88,6 +88,7 @@ extension CatsViewController:MKMapViewDelegate {
         }
         
         let imageView = UIImageView(frame: Constants.imageViewFrame)
+        imageView.contentMode = .ScaleAspectFill
         
         photoView?.leftCalloutAccessoryView  = imageView
         photoView?.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
@@ -104,9 +105,37 @@ extension CatsViewController:MKMapViewDelegate {
             return
         }
         
-        imageView.sd_setImageWithURL(NSURL(string: photoToShow.photoURL),
-            placeholderImage: nil,
-            options: [ .ProgressiveDownload])
+//        update(imageView, url: photoToShow.photoURL)
+        
+        imageView.updateImageWith(photoToShow)
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegueWithIdentifier("Show Image Detailes", sender: view.annotation)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        guard let detailedPhoto = segue.destinationViewController as? PhotoDetailedViewController,
+            let photo = sender as? Photo else {
+                return
+        }
+        detailedPhoto.photo = photo
+    }
+    
+    
+    func update(imageView:UIImageView, url:String){
+        guard let url = NSURL(string: url) else {
+                return
+        }
+        
+        guard let data = NSData(contentsOfURL: url) else {
+            return
+        }
+        
+        let image = UIImage(data: data)
+        
+        imageView.image = image
         
     }
 }
@@ -122,7 +151,21 @@ extension CatsViewController {
     }
 }
 
+//MARK: - UIImageView Extention 
 
+extension UIImageView {
+    func updateImageWith(photo:Photo?) {
+        guard let photoToApply = photo else {
+            self.image = nil
+            return
+        }
+        
+        sd_setImageWithURL(NSURL(string: photoToApply.photoURL),
+            placeholderImage: nil,
+            options: [ .ProgressiveDownload])
+        
+    }
+}
 
 
 

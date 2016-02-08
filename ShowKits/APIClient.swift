@@ -44,7 +44,7 @@ class APIClient: NSObject {
             params["lat"]  = latitude
             params["lon"]  = longitude
             params["radius"] = radius
-            params["extras"] = "url_l,geo,date_taken,owner_name"
+            params["extras"] = "url_l,geo,date_taken,owner_name,url_s,description"
             
             params["format"] = "json"
             params["content_type"]   = 1

@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-//import CoreLocation
+import SDWebImage
 
 class CatsViewController: UIViewController {
 
@@ -87,13 +87,27 @@ extension CatsViewController:MKMapViewDelegate {
                 reuseIdentifier: Constants.AnnotationIdentifier)
         }
         
-        photoView?.leftCalloutAccessoryView  = UIImageView(frame: Constants.imageViewFrame)
+        let imageView = UIImageView(frame: Constants.imageViewFrame)
+        
+        photoView?.leftCalloutAccessoryView  = imageView
         photoView?.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
         
         //чтобы показались кнопка и картинка
         photoView?.canShowCallout = true
         
         return photoView
+    }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        guard let imageView   = view.leftCalloutAccessoryView as? UIImageView,
+              let photoToShow = view.annotation as? Photo  else {
+            return
+        }
+        
+        imageView.sd_setImageWithURL(NSURL(string: photoToShow.photoURL),
+            placeholderImage: nil,
+            options: [ .ProgressiveDownload])
+        
     }
 }
 

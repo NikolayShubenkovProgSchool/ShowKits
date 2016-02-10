@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoDetailedViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var photoDetailes: UILabel!
@@ -25,7 +26,13 @@ class PhotoDetailedViewController: UIViewController {
     
     func setupViews(){
         imageView.updateImageWith(photo)
-        photoDetailes.text = photo?.title
+        photoDetailes.text  = photo?.title
+        scrollView.delegate = self
     }
-    
+}
+
+extension PhotoDetailedViewController: UIScrollViewDelegate {
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
 }
